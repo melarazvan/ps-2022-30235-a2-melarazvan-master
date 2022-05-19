@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>First web app</title>
+</head>
+<body>
+<h1>Log In</h1>
+
+<form name = "logInForm" th:action="@{/login}" method="post">
+    <b>Name</b>
+    <input type="text" id="name" name="name">
+    <b>Password</b>
+    <input type="text" id="password" name="password">
+
+    <button type="submit">LogIn</button>
+</form>
+
+<form name = "toSignIn" th:action="@{/signinpg}" method="post">
+    <button type="submit">SignIn</button>
+</form>
+
+
+</body>
+</html>

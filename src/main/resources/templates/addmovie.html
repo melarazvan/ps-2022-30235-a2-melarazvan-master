@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>First web app</title>
+</head>
+<body>
+<h1>Add Movie</h1>
+
+<form name = "addMovieForm" th:action="@{/addmovie}" method="post">
+  <b>Name</b>
+  <input type="text" id="name" name="name">
+  <b>Description</b>
+  <input type="text" id="description" name="description">
+  <b>Rating</b>
+  <input type="number" id="rating" name="rating">
+
+  <button type="submit">Add</button>
+</form>
+
+<form neme = "toMovieList" th:action = "@{/movies}" method="get">
+  <button type="submit">Back</button>
+</form>
+
+</body>
+</html>

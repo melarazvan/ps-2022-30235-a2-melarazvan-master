@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>First web app</title>
+</head>
+<body>
+<h1>Movies</h1>
+
+<hr>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Movie</th>
+      <th>Description</th>
+      <th>Rateing</th>
+    </tr>
+  </thead>
+  <form name = "searchMovie" th:action="@{/searchmovie}" method="post">
+    <b>Movie Name</b>
+    <input type="text" id="name" name="name">
+    <button type="submit">Search</button>
+  </form>
+  <tbody>
+
+    <tr th:each="tempMovieList:${movieList}">
+      <td th:text="${tempMovieList.name}">
+      <td th:text="${tempMovieList.description}">
+      <td th:text="${tempMovieList.rateing}">
+      <td>
+        <a href= "'http://localhost:8080/app/movie'+${tempMovieList.id}">View</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<form name = "toAddMovie" th:action="@{/addmoviepg}" method="post">
+  <button type="submit">AddMovie</button>
+</form>
+
+
+</body>
+</html>
